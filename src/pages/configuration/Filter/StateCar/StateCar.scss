@@ -1,0 +1,30 @@
+.stateCar {
+  font-family: cursive;
+  font-size: large;
+  border-radius: 5px;
+  margin: auto 10px;
+}
+.btn-stateCar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: cursive;
+  font-size: large;
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+}
+.btn {
+  color: #fff;
+  border: 1px solid rgb(30, 43, 221);
+}
+.btn:hover {
+  color: rgb(255, 225, 0);
+  border: 1px solid rgb(30, 43, 221);
+  background-color: #0457d4;
+  transition: 0.7s;
+}
+
+.btn-stateCar {
+  width: 375px;
+}
