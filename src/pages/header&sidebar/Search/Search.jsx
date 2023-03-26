@@ -1,6 +1,8 @@
 import React from 'react';
 
 function Search() {
+  const [searchValue, setSearchValue] = React.useState(''); //хранит значения поиска
+
   return (
     <span className="searchClass">
       <svg
@@ -33,7 +35,13 @@ function Search() {
           strokeWidth="4"
         />
       </svg>
-      <input type="search" className="search" placeholder="Поиск..." />
+      <input
+        value={searchValue} //значения поиска
+        onChange={(e) => setSearchValue(e.target.value)} //передает вводимый текст в поиск
+        type="search"
+        className="search"
+        placeholder="Поиск авто..."
+      />
       <button className="submit" type="submit">
         Войти
       </button>
