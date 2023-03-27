@@ -10,11 +10,11 @@ import Hozyaeva from './Hozyaeva/Hozyaeva';
 import StateCar from './StateCar/StateCar';
 import Price from './Price/Price';
 
-function Filter() {
+function Filter({ value, onClickategoryID }) {
   return (
     <div className="filter">
       <div className="filterClass">
-        <Category />
+        <Category value={value} onClickategoryID={onClickategoryID} />
         <div className="btn-group setting">
           <Marka />
           <Korobka />
