@@ -1,0 +1,118 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  height: 275px;
+  width: 100%;
+  background-color: rgb(111, 207, 255);
+  border-radius: 10px;
+}
+
+.filterClass {
+  font-family: cursive;
+  margin: 0px 10px 10px 10px;
+}
+
+.setting {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 50px;
+}
+.btn {
+  background-color: #0d6efd;
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgb(30, 43, 221);
+}
+
+.btn.active,
+.btn.active:hover,
+.btn:hover {
+  color: rgb(255, 225, 0);
+  border: 1px solid rgb(30, 43, 221);
+  background-color: #0457d4;
+  transition: 0.7s;
+}
+.btn-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 40px;
+}
+
+.car {
+  margin: 5px 10px 5px 0px;
+  width: 200px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10%;
+}
+
+.btn-primary {
+  font-family: cursive;
+  font-size: large;
+  border: 1px solid rgb(27, 3, 88);
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.btn-stateCar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: cursive;
+  font-size: large;
+  width: 375px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+// .btn-stateCar {
+//   width: 375px;
+// }
+.btn-text {
+  display: flex;
+  color: #fff;
+  font-size: large;
+  width: 200px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+}
+.btn-toolbar {
+  background-color: #0d6efd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.btn-num {
+  width: 40px;
+  height: 62px;
+}
+
+.dropdown-menu {
+  list-style-type: none; //убираем точки вначале
+  background-color: rgb(42, 187, 255);
+  position: absolute;
+  width: 200px;
+  border-radius: 5px;
+  margin-left: 0;
+  margin-top: 37px;
+  padding-left: 0;
+  z-index: 1;
+  border: 1px solid rgb(27, 3, 88);
+}
+.dropdown-item {
+  width: 200px;
+  border-radius: 5px;
+}
+.dropdown-item.active,
+.dropdown-item:hover,
+.dropdown-item.active:hover {
+  color: rgb(255, 225, 0);
+  border: 1px solid rgb(30, 43, 221);
+  background-color: #0457d4;
+  transition: 0.7s;
+  cursor: pointer;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
+import { SearchContext } from '../../../App';
 
 function Search() {
-  const [searchValue, setSearchValue] = React.useState(''); //хранит значения поиска
+  const { searchValue, setSearchValue } = React.createContext(SearchContext);
 
   return (
     <span className="searchClass">

@@ -1,7 +1,8 @@
 import React from 'react';
+
 import './category.scss';
 
-function Category({ value, onClickategoryID }) {
+function Category({ value, onClickCategoryID }) {
   const category = ['Все', 'Новые', 'С пробегом'];
 
   return (
@@ -11,7 +12,7 @@ function Category({ value, onClickategoryID }) {
       {category.map((categoryName, i) => (
         <label
           key={i}
-          onClick={() => onClickategoryID(i)}
+          onClick={() => onClickCategoryID(i)}
           className={value == i ? 'btn btn-category-primary active' : 'btn btn-category-primary'}>
           {categoryName}
         </label>

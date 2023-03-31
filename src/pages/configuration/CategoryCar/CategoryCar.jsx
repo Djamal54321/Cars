@@ -1,16 +1,16 @@
 import React from 'react';
 import './categoryCar.scss';
 
-function CategoryCar({ value, onClickCategoryCar }) {
+function CategoryCar({ value, onClickCategoryCarID }) {
   const categories = ['мотоциклы', 'легковые', 'внедорожники', 'грузовые', 'истребители', 'танки'];
 
   return (
-    <div className="category">
-      <ul className="categoryCar">
+    <div className="categoryCar">
+      <ul className="categoryCarSetting">
         {categories.map((categoryName, i) => (
           <button
             key={i}
-            onClick={() => onClickCategoryCar(i)}
+            onClick={() => onClickCategoryCarID(i)}
             className={value == i ? 'btn btn-car active' : 'btn btn-car'}>
             {categoryName}
           </button>
