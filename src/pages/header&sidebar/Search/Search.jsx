@@ -2,7 +2,7 @@ import React from 'react';
 import { SearchContext } from '../../../App';
 
 function Search() {
-  const { searchValue, setSearchValue } = React.createContext(SearchContext);
+  const { searchValue, setSearchValue } = React.useContext(SearchContext);
 
   return (
     <span className="searchClass">

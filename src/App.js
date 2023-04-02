@@ -14,10 +14,12 @@ function App() {
   const [searchValue, setSearchValue] = React.useState(''); //хранит значения поиска
 
   React.useEffect(() => {
-    axios.get('https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items').then((res) => {
-      setItems(res.data);
-    });
-  }, []);
+    axios
+      .get('https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items?search=' + searchValue)
+      .then((res) => {
+        setItems(res.data);
+      });
+  }, [searchValue]);
 
   return (
     <div className="App">
