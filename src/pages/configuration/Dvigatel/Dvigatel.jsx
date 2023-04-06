@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Dvigatel() {
-  const [open, setOpen] = React.useState(false);
+function Dvigatel({ value, onClickDvigatelID }) {
   const [active, setActive] = React.useState(0);
   const onClickActive = (i) => {
     setActive(i);
@@ -22,10 +21,10 @@ function Dvigatel() {
         className="btn btn-primary dropdown-toggle"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-        onClick={() => setOpen(!open)}>
+        onClick={() => onClickDvigatelID(!value)}>
         Двигатель
       </button>
-      {open && (
+      {value && (
         <ul className="dropdown-menu">
           {category.map((categoryName, i) => (
             <li

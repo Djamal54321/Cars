@@ -1,13 +1,9 @@
 import React from 'react';
 import './StateCar.scss';
 
-function StateCar() {
-  const [active, setActive] = React.useState(0);
-  const onClickActive = (i) => {
-    setActive(i);
-  };
-
+function StateCar({ value, onClickStateCarID }) {
   const category = ['Все', 'Кроме битых', 'Битые'];
+
   return (
     <div className="stateCar" role="group" aria-label="Large button group">
       <div className="btn-stateCar">
@@ -15,8 +11,8 @@ function StateCar() {
           <button
             key={i}
             type="button"
-            onClick={() => onClickActive(i)}
-            className={active == i ? 'btn btn-stateCar active' : 'btn btn-stateCar'}>
+            onClick={() => onClickStateCarID(i)}
+            className={value == i ? 'btn btn-stateCar active' : 'btn btn-stateCar'}>
             {categoryName}
           </button>
         ))}

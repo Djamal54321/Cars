@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Volume() {
-  const [open, setOpen] = React.useState(false);
+function Volume({ value, onClickVolumeID }) {
   const [active, setActive] = React.useState(0);
   const onClickActive = (i) => {
     setActive(i);
@@ -26,10 +25,10 @@ function Volume() {
         className="btn btn-primary dropdown-toggle"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-        onClick={() => setOpen(!open)}>
+        onClick={() => onClickVolumeID(!value)}>
         Объем
       </button>
-      {open && (
+      {value && (
         <ul className="dropdown-menu">
           {catogory.map((categoryName, i) => (
             <li

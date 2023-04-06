@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Marka() {
-  const [open, setOpen] = React.useState(false);
+function Marka({ value, onClickMarkaID }) {
   const [active, setActive] = React.useState(0);
   const onClickActive = (i) => {
     setActive(i);
@@ -22,10 +21,10 @@ function Marka() {
         className="btn btn-primary dropdown-toggle"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-        onClick={() => setOpen(!open)}>
+        onClick={() => onClickMarkaID(!value)}>
         Марка
       </button>
-      {open && (
+      {value && (
         <ul className="dropdown-menu">
           {category.map((categoryName, i) => (
             <li

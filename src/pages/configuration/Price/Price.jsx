@@ -1,14 +1,17 @@
 import './price.scss';
 
-function Price() {
+function Price({ value1, onClickPrice1, value2, onClickPrice2 }) {
   return (
     <div className="price">
       <label for="text" className="name">
         Цена:
       </label>
       <input
-        type="text"
-        id="name"
+        value={value1}
+        onChange={(e) => onClickPrice1(e.target.value)}
+        accept="number"
+        type="number"
+        id="price-from"
         className="price-from"
         placeholder=" от"
         required
@@ -17,8 +20,10 @@ function Price() {
         data-marker="price/from"
       />
       <input
-        type="text"
-        id="name"
+        value={value2}
+        onChange={(e) => onClickPrice2(e.target.value)}
+        type="number"
+        id="price-for"
         className="price-for"
         placeholder=" до"
         required

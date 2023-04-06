@@ -1,11 +1,8 @@
 import React from 'react';
 
 import './Hozyaeva.scss';
-
-function Hozyaeva() {
-  const [active, setActive] = React.useState(0);
-  const onClickNumber = (i) => setActive(i);
-
+//{hozyaeva, setHozyaeva}
+function Hozyaeva({ value, onClickHozyaevaID }) {
   const amount = ['1', '2', '3', '4', '..>4'];
 
   return (
@@ -15,9 +12,9 @@ function Hozyaeva() {
         {amount.map((amountName, i) => (
           <button
             key={i}
-            onClick={() => onClickNumber(i)}
+            onClick={() => onClickHozyaevaID(i)}
             type="button"
-            className={active == i ? 'btn btn-primary btn-num active' : 'btn btn-primary btn-num'}>
+            className={value == i ? 'btn btn-primary btn-num active' : 'btn btn-primary btn-num'}>
             {amountName}
           </button>
         ))}

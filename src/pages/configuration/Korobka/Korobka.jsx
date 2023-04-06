@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Korobka() {
-  const [open, setOpen] = React.useState(false);
+function Korobka({ value, onClickKorobkaID }) {
   const [active, setActive] = React.useState(0);
   const onClickActive = (i) => {
     setActive(i);
@@ -22,11 +21,11 @@ function Korobka() {
         className="btn btn-primary dropdown-toggle"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-        onClick={() => setOpen(!open)}>
+        onClick={() => onClickKorobkaID(!value)}>
         Коробка
       </button>
 
-      {open && (
+      {value && (
         <ul className="dropdown-menu">
           {category.map((categoryName, i) => (
             <li
