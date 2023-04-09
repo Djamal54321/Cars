@@ -2,7 +2,15 @@ import React from 'react';
 import './categoryCar.scss';
 
 function CategoryCar({ value, onClickCategoryCarID }) {
-  const categories = ['мотоциклы', 'легковые', 'внедорожники', 'грузовые', 'истребители', 'танки'];
+  const categories = [
+    'все',
+    'мотоциклы',
+    'легковые',
+    'внедорожники',
+    'грузовые',
+    'истребители',
+    'танки',
+  ];
 
   return (
     <div className="categoryCar">

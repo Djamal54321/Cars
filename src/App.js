@@ -7,19 +7,29 @@ import Header from './pages/header&sidebar/Header';
 import Configuration from './pages/configuration/Configuration';
 import CarsMain from './pages/CarsMain/CarsMain';
 
-export const SearchContext = React.createContext();
+export const ObjContext = React.createContext();
 
 function App() {
   const [items, setItems] = React.useState([]); //хранит данные машин
   const [searchValue, setSearchValue] = React.useState(''); //хранит значения поиска
   const [categoryCarID, setCategoryCarID] = React.useState(0);
-
-  const search = searchValue ? `&search =${searchValue}` : '';
+  const [categoryID, setCategoryID] = React.useState(0);
+  const [marka, setMarka] = React.useState(false);
+  const [korobka, setKorobka] = React.useState(false);
+  const [dvigatel, setDvigatel] = React.useState(false);
+  const [volume, setVolume] = React.useState(false);
+  const [hozyaeva, setHozyaeva] = React.useState(false);
+  const [stateCar, setStateCar] = React.useState(false);
+  const [priceFrom, setPriceFrom] = React.useState('');
+  const [priceFor, setPriceFor] = React.useState('');
 
   React.useEffect(() => {
+    const category = categoryCarID > 0 ? categoryCarID : ''; //не работает! ХЗ почему..
+
     axios
-      // .get(`https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items?search=` + searchValue)
-      .get(`https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items?search=` + searchValue)
+      .get(
+        `https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items?search=${searchValue}&category=${category}`,
+      )
       .then((res) => {
         setItems(res.data);
       });
@@ -27,12 +37,35 @@ function App() {
 
   return (
     <div className="App">
-      <SearchContext.Provider
-        value={{ searchValue, setSearchValue, categoryCarID, setCategoryCarID }}>
+      <ObjContext.Provider
+        value={{
+          searchValue,
+          setSearchValue,
+          categoryCarID,
+          setCategoryCarID,
+          categoryID,
+          setCategoryID,
+          marka,
+          setMarka,
+          korobka,
+          setKorobka,
+          dvigatel,
+          setDvigatel,
+          volume,
+          setVolume,
+          hozyaeva,
+          setHozyaeva,
+          stateCar,
+          setStateCar,
+          priceFrom,
+          setPriceFrom,
+          priceFor,
+          setPriceFor,
+        }}>
         <Header />
         <Configuration />
         <CarsMain items={items} />
-      </SearchContext.Provider>
+      </ObjContext.Provider>
     </div>
   );
 }

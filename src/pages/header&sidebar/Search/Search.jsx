@@ -1,8 +1,8 @@
 import React from 'react';
-import { SearchContext } from '../../../App';
+import { ObjContext } from '../../../App';
 
 function Search() {
-  const { searchValue, setSearchValue } = React.useContext(SearchContext);
+  const { searchValue, setSearchValue } = React.useContext(ObjContext);
 
   return (
     <span className="searchClass">

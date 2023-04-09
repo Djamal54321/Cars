@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchContext } from '../../App';
+import { ObjContext } from '../../App';
 
 import './configuration.scss';
 
@@ -14,16 +14,30 @@ import StateCar from './StateCar/StateCar';
 import Price from './Price/Price';
 
 function Configuration() {
-  const { categoryCarID, setCategoryCarID } = React.useContext(SearchContext);
-  const [categoryID, setCategoryID] = React.useState(0);
-  const [marka, setMarka] = React.useState(false);
-  const [korobka, setKorobka] = React.useState(false);
-  const [dvigatel, setDvigatel] = React.useState(false);
-  const [volume, setVolume] = React.useState(false);
-  const [hozyaeva, setHozyaeva] = React.useState(false);
-  const [stateCar, setStateCar] = React.useState(false);
-  const [priceFrom, setPriceFrom] = React.useState('');
-  const [priceFor, setPriceFor] = React.useState('');
+  const {
+    searchValue,
+    setSearchValue,
+    categoryCarID,
+    setCategoryCarID,
+    categoryID,
+    setCategoryID,
+    marka,
+    setMarka,
+    korobka,
+    setKorobka,
+    dvigatel,
+    setDvigatel,
+    volume,
+    setVolume,
+    hozyaeva,
+    setHozyaeva,
+    stateCar,
+    setStateCar,
+    priceFrom,
+    setPriceFrom,
+    priceFor,
+    setPriceFor,
+  } = React.useContext(ObjContext);
 
   return (
     <div className="filter">
