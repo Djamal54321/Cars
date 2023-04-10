@@ -3,12 +3,12 @@ import React from 'react';
 import './Hozyaeva.scss';
 //{hozyaeva, setHozyaeva}
 function Hozyaeva({ value, onClickHozyaevaID }) {
-  const amount = ['1', '2', '3', '4', '..>4'];
+  const amount = ['<>', '1', '2', '3', '4', '..>4'];
 
   return (
     <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div className="btn-group-h me-2" role="group" aria-label="First group">
-        <p className="btn-text">Количеcтво хозяев:</p>
+        <p className="btn-text">Количеcтво владельцев:</p>
         {amount.map((amountName, i) => (
           <button
             key={i}

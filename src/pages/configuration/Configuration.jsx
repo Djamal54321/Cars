@@ -15,8 +15,6 @@ import Price from './Price/Price';
 
 function Configuration() {
   const {
-    searchValue,
-    setSearchValue,
     categoryCarID,
     setCategoryCarID,
     categoryID,

@@ -8,13 +8,13 @@ function StateCar({ value, onClickStateCarID }) {
     <div className="stateCar" role="group" aria-label="Large button group">
       <div className="btn-stateCar">
         {category.map((categoryName, i) => (
-          <button
+          <label
             key={i}
             type="button"
             onClick={() => onClickStateCarID(i)}
             className={value == i ? 'btn btn-stateCar active' : 'btn btn-stateCar'}>
             {categoryName}
-          </button>
+          </label>
         ))}
       </div>
     </div>
