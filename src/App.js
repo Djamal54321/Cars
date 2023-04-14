@@ -5,12 +5,17 @@ import './App.css';
 
 import Header from './pages/header&sidebar/Header';
 import Configuration from './pages/configuration/Configuration';
-import CarsMain from './pages/CarsMain/CarsMain';
+import CarsMain from './pages/cars/CarsMain';
+import Pagination from './pages/Pagination';
 
 export const ObjContext = React.createContext();
 
 function App() {
   const [items, setItems] = React.useState([]); //хранит данные машин
+  const [loading, setLoading] = React.useState(false); // начало и конец загрузки
+  const [currentPage, setCurrentPage] = React.useState(1); //отображение нужной страницы ПАГГИНАЦИЯ
+  const [elementPage] = React.useState(3); //количество эементов на странице ПАГГИНАЦИЯ
+
   const [searchValue, setSearchValue] = React.useState(''); //хранит значения поиска
   const [categoryCarID, setCategoryCarID] = React.useState(0); //хранит класс техники
   const [categoryID, setCategoryID] = React.useState(0); //хранит б/у или новые
@@ -33,16 +38,20 @@ function App() {
       if (marka) return `&title=${marka}`; //// НЕ РАБОТАЕТ
       else return '';
     }
-
-    axios
-      .get(
-        //search=${searchValue}&category=${categoryCar}&condition=${category}
-        `https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items?${setting()}`,
-      )
-      .then((res) => {
-        setItems(res.data);
-      });
+    setLoading(true);
+    axios.get(`https://6417d9f8cc5fd8ffb1780f3e.mockapi.io/cars/items?${setting()}`).then((res) => {
+      setItems(res.data);
+      setLoading(false);
+    });
   }, [searchValue, categoryCarID, categoryID, stateCar, hozyaeva, marka]);
+
+  //ПАГГИНАЦИЯ
+  const lastPageIndex = currentPage * elementPage; //последняя страница
+  const firstPAgeIndex = lastPageIndex - elementPage; //первая страница
+  const currentCar = items.slice(firstPAgeIndex, lastPageIndex); //текущая страница
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage((prev) => prev + 1);
+  const lastPage = () => setCurrentPage((prev) => prev - 1);
 
   return (
     <div className="App">
@@ -70,10 +79,13 @@ function App() {
           setPriceFrom,
           priceFor,
           setPriceFor,
+          nextPage, //ПАГГИНАЦИЯ Следующая
+          lastPage, //ПАГГИНАЦИЯ Предыдущая
         }}>
         <Header />
         <Configuration />
-        <CarsMain items={items} />
+        <CarsMain items={currentCar} loading={loading} />
+        <Pagination elementPage={elementPage} totalCars={items.length} paginate={paginate} />
       </ObjContext.Provider>
     </div>
   );

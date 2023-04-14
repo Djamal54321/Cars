@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.page-data {
+  display: flex;
+  margin: auto 5px;
+}
+.page-item {
+  background-color: rgb(102, 215, 250);
+  width: 45px;
+  height: 38px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  list-style-type: none; //убираем точку перед li
+}
+.page-link {
+  font-family: cursive;
+  font-size: large;
+  text-decoration: none; //убираем нижнее подчеркивание
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
