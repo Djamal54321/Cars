@@ -13,6 +13,9 @@ function Header() {
           <h2>АВТОМИР</h2>
         </span>
         <Search />
+        <button className="submit" type="submit">
+          Войти
+        </button>
       </div>
     </header>
   );

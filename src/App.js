@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
 import Header from './pages/header&sidebar/Header';
 import Configuration from './pages/configuration/Configuration';
 import CarsMain from './pages/cars/CarsMain';
-import Pagination from './pages/Pagination';
+import Pagination from './pages/Pagination/Pagination';
 
 export const ObjContext = React.createContext();
 
@@ -85,6 +86,7 @@ function App() {
         <Header />
         <Configuration />
         <CarsMain items={currentCar} loading={loading} />
+
         <Pagination elementPage={elementPage} totalCars={items.length} paginate={paginate} />
       </ObjContext.Provider>
     </div>

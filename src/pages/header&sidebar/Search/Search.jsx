@@ -43,9 +43,6 @@ function Search() {
         className="search"
         placeholder="Поиск авто..."
       />
-      <button className="submit" type="submit">
-        Войти
-      </button>
     </span>
   );
 }
