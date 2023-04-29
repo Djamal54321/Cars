@@ -1,5 +1,5 @@
 import React from 'react';
-import { ObjContext } from '../../App';
+import { ObjContext } from '../Home';
 
 import './pagination.scss';
 
@@ -23,7 +23,7 @@ function Pagination({ elementPage, totalCars, paginate }) {
         <div className="page-data">
           {pageNumbers.map((number) => (
             <li className="page-item" key={number}>
-              <a href="!#" className="page-link" onClick={() => paginate(number)}>
+              <a htef="#" className="page-link" onClick={() => paginate(number)}>
                 {number}
               </a>
             </li>

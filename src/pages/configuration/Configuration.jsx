@@ -1,5 +1,5 @@
 import React from 'react';
-import { ObjContext } from '../../App';
+import { ObjContext } from '../Home';
 
 import './configuration.scss';
 

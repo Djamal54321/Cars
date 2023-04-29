@@ -1,5 +1,5 @@
 import React from 'react';
-import { ObjContext } from '../../../App';
+import { ObjContext } from '../../Home';
 
 function Search() {
   const { searchValue, setSearchValue } = React.useContext(ObjContext);
