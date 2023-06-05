@@ -12,11 +12,6 @@
   margin: 0px 10px 10px 10px;
 }
 
-.setting {
-  display: flex;
-  flex-direction: row;
-  margin: 15px 50px;
-}
 .btn {
   background-color: #0d6efd;
   text-align: center;
@@ -38,6 +33,11 @@
   display: flex;
   flex-wrap: wrap;
   margin: 5px 40px;
+  .setting {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 50px;
+  }
 }
 
 .car {
@@ -69,9 +69,6 @@
   border-radius: 5px;
 }
 
-// .btn-stateCar {
-//   width: 375px;
-// }
 .btn-text {
   display: flex;
   color: #fff;

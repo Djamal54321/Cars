@@ -11,7 +11,7 @@ function Search() {
         fill="none"
         height="48"
         viewBox="0 0 48 48"
-        width="48"
+        width="148"
         xmlns="http://www.w3.org/2000/svg">
         <rect fill="white" fillOpacity="0.01" height="48" width="48" />
         <path

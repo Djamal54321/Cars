@@ -1,43 +1,39 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './style.scss';
-import { instance } from '../../axios';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Login from './Login/Login';
 import Register from './Register/Register';
 import { Box } from '@mui/material';
+import { login } from '../../redux/Slices/userSlice';
 
 const Auth = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-
   const [repeatPassword, setRepeatPassword] = React.useState('');
   const [firstName, setFirstName] = React.useState('');
   const [userName, setUserName] = React.useState('');
 
   const location = useLocation(); //хук типа Route, если "это", то "такая-то страница"
 
+  const user = useSelector((state) => state.user); //redux
+  const dispatch = useDispatch(); //redux
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (location.pathname === '/login/') {
+    dispatch(login({ email, password }));
+
+    if (password === repeatPassword) {
       const userData = {
-        email: email, // параметр из BackEnd : useState (email)
-        password: password, // параметр из BackEnd : useState (password)
+        email, // то же самое
+        password,
+        repeatPassword,
+        firstName,
+        userName,
       };
-      const user = await instance.post('/login/', userData); //запрос на сервер и передача ему введенных данных
     } else {
-      if (password === repeatPassword) {
-        const userData = {
-          email, // то же самое
-          password,
-          repeatPassword,
-          firstName,
-          userName,
-        };
-        const newUser = await instance.post('/register/', userData);
-      } else {
-        throw new Error('Пароли не сопрадают. Введите одинаковые пароли!');
-      }
+      throw new Error('Пароли не сопрадают. Введите одинаковые пароли!');
     }
   };
 
@@ -46,9 +42,10 @@ const Auth = () => {
       <form className="form" onSubmit={handleSubmit}>
         <Box className="box">
           {location.pathname === '/login/' ? (
-            <Login setEmail={setEmail} setPassword={setPassword} />
+            <Login handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} />
           ) : location.pathname === '/register/' ? (
             <Register
+              handleSubmit={handleSubmit}
               setEmail={setEmail}
               setPassword={setPassword}
               setRepeatPassword={setRepeatPassword}
@@ -56,6 +53,10 @@ const Auth = () => {
               setUsername={setUserName}
             />
           ) : null}
+
+          <Link className="to_main" to="/">
+            На главную{' '}
+          </Link>
         </Box>
       </form>
     </div>

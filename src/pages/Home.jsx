@@ -14,7 +14,7 @@ function Home() {
   const [items, setItems] = React.useState([]); //хранит данные машин
   const [loading, setLoading] = React.useState(false); // начало и конец загрузки
   const [currentPage, setCurrentPage] = React.useState(1); //отображение нужной страницы ПАГГИНАЦИЯ
-  const [elementPage] = React.useState(3); //количество эементов на странице ПАГГИНАЦИЯ
+  const [elementPage] = React.useState(3); //количество элементов на странице ПАГГИНАЦИЯ
 
   const [searchValue, setSearchValue] = React.useState(''); //хранит значения поиска
   const [categoryCarID, setCategoryCarID] = React.useState(0); //хранит класс техники
@@ -50,8 +50,9 @@ function Home() {
   const firstPAgeIndex = lastPageIndex - elementPage; //первая страница
   const currentCar = items.slice(firstPAgeIndex, lastPageIndex); //текущая страница
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  const nextPage = () => setCurrentPage((prev) => prev + 1);
-  const lastPage = () => setCurrentPage((prev) => prev - 1);
+  const nextPage = () =>
+    setCurrentPage((prev) => (prev < lastPageIndex ? prev + 1 : lastPageIndex));
+  const lastPage = () => setCurrentPage((prev) => (prev > firstPAgeIndex ? 1 : prev - 1));
 
   return (
     <div className="Home">

@@ -48,7 +48,7 @@ function Configuration() {
           <Dvigatel value={dvigatel} onClickDvigatelID={(i) => setDvigatel(i)} />
           <Volume value={volume} onClickVolumeID={(i) => setVolume(i)} />
         </div>
-        <div className="btn-group setting">
+        <div className="btn-group settingTwo">
           <Hozyaeva value={hozyaeva} onClickHozyaevaID={(i) => setHozyaeva(i)} />
           <StateCar value={stateCar} onClickStateCarID={(i) => setStateCar(i)} />
           <Price

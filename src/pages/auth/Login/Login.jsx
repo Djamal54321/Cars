@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Typography, TextField, Button } from '@mui/material';
 
 function Login(props) {
-  const { setEmail, setPassword } = props;
+  const { handleSubmit, setEmail, setPassword } = props;
 
   return (
     <>
@@ -31,6 +32,7 @@ function Login(props) {
         type="password"
       />
       <Button
+        onClick={handleSubmit}
         type="submit"
         sx={{ fontFamily: 'Poppins', margin: 2, width: '60%' }}
         variant="contained">
@@ -39,7 +41,9 @@ function Login(props) {
 
       <Typography variant="body1" sx={{ fontFamily: 'Poppins' }}>
         У вас нет аккаунта?
-        <span className="registry">Регистрация</span>
+        <Link className="registry" to="/register/">
+          Регистрация
+        </Link>
       </Typography>
     </>
   );

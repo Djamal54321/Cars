@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Typography, TextField, Button } from '@mui/material';
 
 function Register(props) {
-  const { setEmail, setPassword, setRepeatPassword, setFirstName, setUserName } = props;
+  const { handleSubmit, setEmail, setPassword, setRepeatPassword, setFirstName, setUserName } =
+    props;
   return (
     <>
       <Typography variant="h2" fontFamily="Poppins" textAlign="center">
@@ -56,6 +58,7 @@ function Register(props) {
         onChange={(e) => setRepeatPassword(e.target.values)}
       />
       <Button
+        onClick={handleSubmit}
         type="submit"
         sx={{ fontFamily: 'Poppins', margin: 2, width: '60%' }}
         variant="contained">
@@ -64,7 +67,9 @@ function Register(props) {
 
       <Typography variant="body1" sx={{ fontFamily: 'Poppins' }}>
         У вас есть аккаунта?
-        <span className="registry">Авторизация</span>
+        <Link className="registry" to="/login/">
+          Авторизация
+        </Link>
       </Typography>
     </>
   );

@@ -12,6 +12,17 @@
       cursor: pointer;
     }
   }
+  .to_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #1900d5;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    text-decoration: none; //убираем нижнее подчеркивание
+  }
 }
 
 .box {
