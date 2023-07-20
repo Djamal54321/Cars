@@ -1,0 +1,90 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+
+    .bg-video video {
+      opacity: 0.2;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .form {
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+
+    .login {
+      color: #1900d5;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .registry {
+      color: #1900d5;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+  .to_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #1900d5;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    text-decoration: none; //убираем нижнее подчеркивание
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 640px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #ccc;
+  background-color: rgb(166, 222, 255);
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.42857143;
+  background-color: rgb(166, 222, 255);
+  background-image: none;
+  border: 1px solid rgb(86, 60, 255);
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+.form-input:hover,
+.form-input:active {
+  border: 2px solid rgb(25, 0, 187);
+}
+
+.form-control {
+  margin-bottom: 20px;
+  color: red;
+  background-color: rgb(166, 222, 255);
+}

@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, TextField, Button } from '@mui/material';
+import { useForm, Controller, useFormState } from 'react-hook-form';
+import { emailValdation, passwordValdation } from '../Validation';
 
-function Login(props) {
-  const { handleSubmit, setEmail, setPassword } = props;
+function Login() {
+  const { handleSubmit, control } = useForm();
+  const { errors } = useFormState({ control });
+
+  const onSubmit = (values) => {
+    console.log(values);
+  };
 
   return (
     <>
@@ -14,25 +21,49 @@ function Login(props) {
         Введите ваш логин и пароль
       </Typography>
 
-      <TextField
-        fullWidth={true}
-        label="Email"
-        variant="outlined"
-        placeholder="Введите ваш email"
-        margin="normal"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <TextField
-        fullWidth={true}
-        label="Password"
-        variant="outlined"
-        placeholder="Введите ваш пароль"
-        margin="normal"
-        onChange={(e) => setPassword(e.target.value)}
-        type="password"
-      />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          control={control}
+          name="email"
+          rules={emailValdation}
+          render={({ field }) => (
+            <TextField
+              fullWidth={true}
+              onChange={(e) => field.onChange(e)}
+              value={field.value || ''}
+              error={errors.email}
+              helperText={errors.email?.message}
+              label="Email"
+              variant="outlined"
+              placeholder="Введите ваш email"
+              margin="normal"
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="password"
+          rules={passwordValdation}
+          render={({ field }) => (
+            <TextField
+              fullWidth={true}
+              onChange={(e) => field.onChange(e)}
+              value={field.value || ''}
+              error={!!errors.password?.message}
+              helperText={errors.password?.message}
+              type="password"
+              label="Password"
+              variant="outlined"
+              placeholder="Введите ваш пароль"
+              margin="normal"
+            />
+          )}
+        />
+      </form>
+
       <Button
-        onClick={handleSubmit}
+        onClick={handleSubmit(onSubmit)}
         type="submit"
         sx={{ fontFamily: 'Poppins', margin: 2, width: '60%' }}
         variant="contained">
