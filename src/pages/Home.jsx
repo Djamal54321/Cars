@@ -56,6 +56,9 @@ function Home() {
 
   return (
     <div className="Home">
+      <div className="pictures">
+        <img src="../../files/fon.jpg"></img>
+      </div>
       <ObjContext.Provider
         value={{
           searchValue,
