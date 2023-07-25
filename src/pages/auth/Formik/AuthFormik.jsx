@@ -12,14 +12,10 @@ const AuthFormik = () => {
   return (
     <div className="root">
       <div className="form">
-        <div>
-          <video
-            className="bg-video"
-            loop
-            autoplay
-            //muted
-            src="https://youtu.be/cwA9PuTSuRc"
-            type="video.mp4"></video>
+        <div className="imgFon">
+          <img
+            className="img"
+            src="http://kalix.club/uploads/posts/2022-12/1672311449_kalix-club-p-tekstura-rezini-besshovnaya-instagram-6.jpg"></img>
         </div>
         <Box className="box">
           {location.pathname === '/login/' ? (

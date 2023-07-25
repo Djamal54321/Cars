@@ -57,7 +57,11 @@ function Home() {
   return (
     <div className="Home">
       <div className="pictures">
-        <img src="../../files/fon.jpg"></img>
+        <img
+          className="fon"
+          src="https://www.nzherald.co.nz/resizer/QT5oVP2yYqiSHzBJaO5VU377ORk=/1200x0/smart/filters:quality(70)/arc-anglerfish-syd-prod-nzme.s3.amazonaws.com/public/7HP4HVOLPJECBH44AXQ3TDYCMU.jpg"
+          type="fon/jpg"
+          alt="Ocean"></img>
       </div>
       <ObjContext.Provider
         value={{

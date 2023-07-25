@@ -58,40 +58,15 @@
   position: relative;
 }
 
-.btn-stateCar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: cursive;
-  font-size: large;
-  width: 375px;
-  height: 60px;
-  border-radius: 5px;
-}
-
-.btn-text {
-  display: flex;
-  color: #fff;
-  font-size: large;
-  width: 250px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  margin: 0px auto;
-}
 .btn-toolbar {
   background-color: #0d6efd;
   border-radius: 5px;
   margin-right: 10px;
 }
-.btn-num {
-  width: 40px;
-  height: 62px;
-}
 
 .dropdown-menu {
   list-style-type: none; //убираем точки вначале
-  background-color: rgb(42, 187, 255);
+  background-color: rgb(57, 191, 253);
   position: absolute;
   width: 200px;
   border-radius: 5px;
@@ -104,6 +79,10 @@
 .dropdown-item {
   width: 200px;
   border-radius: 5px;
+}
+
+.dropdown-item a {
+  color: rgb(255, 255, 255);
 }
 .dropdown-item.active,
 .dropdown-item:hover,

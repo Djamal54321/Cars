@@ -5,49 +5,43 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-  .bg-video {
-    position: absolute;
-    top: 0;
+
+  .img {
     left: 0;
-    height: 100%;
-    width: 100%;
+    top: 0;
+    position: absolute;
     z-index: -1;
-    overflow: hidden;
-
-    .bg-video video {
-      opacity: 0.2;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-  .form {
     width: 100%;
-    z-index: 1;
-    text-align: center;
+    height: 100%;
+  }
+}
 
-    .login {
-      color: #1900d5;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-    .registry {
-      color: #1900d5;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-  }
-  .to_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.form {
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+
+  .login {
     color: #1900d5;
-    margin-top: 10px;
+    margin-left: 10px;
     cursor: pointer;
-    font-family: 'Poppins';
-    text-decoration: none; //убираем нижнее подчеркивание
   }
+  .registry {
+    color: #1900d5;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+.to_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #1900d5;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: 'Poppins';
+  text-decoration: none; //убираем нижнее подчеркивание
 }
 
 .box {
@@ -75,9 +69,10 @@
   background-image: none;
   border: 1px solid rgb(86, 60, 255);
   border-radius: 4px;
-
+  color: rgb(8, 50, 255);
   cursor: pointer;
 }
+
 .form-input:hover,
 .form-input:active {
   border: 2px solid rgb(25, 0, 187);
@@ -87,4 +82,8 @@
   margin-bottom: 20px;
   color: red;
   background-color: rgb(166, 222, 255);
+}
+.form-input::placeholder {
+  color: #1900d5;
+  opacity: 0.4;
 }

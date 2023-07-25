@@ -88,22 +88,3 @@ const LoginCopy = () => {
 };
 
 export default LoginCopy;
-
-// const LoginCopy = () => {
-//   return (
-//     <div>
-//       <div class="video-box">
-//         <video autoplay loop muted controls="">
-//           <source
-//             src="https://www.youtube.com/watch?v=cwA9PuTSuRc&ab_channel=%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%93%D1%80%D0%B8%D1%88%D0%BA%D0%B8%D0%BD"
-//             type="video/mp4"
-//           />
-//         </video>
-
-//         <div class="video-content">Контент...</div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default LoginCopy;

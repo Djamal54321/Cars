@@ -1,5 +1,6 @@
 import React from 'react';
 import { ObjContext } from '../../Home';
+import './search.scss';
 
 function Search() {
   const { searchValue, setSearchValue } = React.useContext(ObjContext);
@@ -40,8 +41,8 @@ function Search() {
         value={searchValue} //значения поиска
         onChange={(e) => setSearchValue(e.target.value)} //передает вводимый текст в поиск
         type="search"
-        className="search"
-        placeholder="Поиск авто..."
+        className="search browser-default"
+        placeholder=" Поиск авто..."
       />
     </span>
   );
