@@ -1,13 +1,15 @@
 .categoryCar {
-  background-color: rgb(6, 164, 243);
-  border-radius: 10px;
-  display: flex;
-  margin: 10px 50px 5px;
+  background-color: #0d6efd;
+  margin: 5px 40px;
+  max-width: 100vmax;
   height: 50px;
+  border-radius: 5px;
 }
 
 .categoryCarSetting {
-  margin: 10px 20px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px 20px 0px 10px;
 }
 
 .btn-car {
@@ -19,7 +21,7 @@
   color: #fff;
   font-size: 15px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin: auto 10px;
+  margin: 10px 10px;
 }
 .btn-car:hover {
   background-color: #005eeb;

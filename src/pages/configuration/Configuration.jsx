@@ -39,8 +39,8 @@ function Configuration() {
 
   return (
     <div className="filter">
-      <CategoryCar value={categoryCarID} onClickCategoryCarID={(i) => setCategoryCarID(i)} />
       <div className="filterClass">
+        <CategoryCar value={categoryCarID} onClickCategoryCarID={(i) => setCategoryCarID(i)} />
         <Category value={categoryID} onClickCategoryID={(i) => setCategoryID(i)} />
         <div className="btn-group setting">
           <Marka value={marka} onClickMarkaID={(i) => setMarka(i)} />

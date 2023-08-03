@@ -1,12 +1,6 @@
 .App {
   text-align: center;
-  width: 100%;
+  width: 100vh;
   height: 100vh;
   margin: auto;
-}
-
-.load {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
 }

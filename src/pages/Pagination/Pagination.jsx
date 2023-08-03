@@ -16,7 +16,7 @@ function Pagination({ elementPage, totalCars, paginate }) {
   }
   return (
     <div>
-      <ul className="pagination">
+      <ul className="pagination browser-default">
         <button className="btn btn-primary" onClick={lastPage}>
           Предыдущая
         </button>

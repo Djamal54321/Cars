@@ -1,50 +1,56 @@
-.menu {
-  display: block;
-  width: 50px;
+.burger {
+  padding: 0;
+  margin: 2.3733333333rem 0 1.424rem 0;
+  box-sizing: border-box;
+}
+
+nav {
+  // position: fixed;
   height: 50px;
-  background-color: #fff;
-  border-radius: 30%;
-  position: relative;
-  margin: auto 20px auto;
+  width: 50px;
+  margin-right: 20px;
+  background-color: rgb(111, 207, 255);
+  border-radius: 50%;
+  z-index: 50;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
-.menu ::before {
-  transform: translateY(-5px);
-  transition: 0.2s;
-}
-.menu ::after {
-  transform: translateY(5px);
-  transition: 0.2s;
+main {
+  padding: 50px;
 }
 
-.menu :hover::before {
-  transform: rotate(30deg);
-  transform-origin: left bottom;
-  width: 10px;
+p {
+  margin: 20px;
 }
 
-.menu :hover::after {
-  transform: rotate(-30deg);
-  transform-origin: left top;
-  width: 10px;
+.burger-btn {
+  margin-left: 15px;
+  position: relative;
+  margin-top: -20px;
 }
 
-//псевдоэлементы - сверу и снизу полоски
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
-  position: absolute;
-  top: 50%;
-  margin-top: -1px;
-  left: 50%;
-  margin-left: -10px;
-  width: 20px;
-  height: 2px;
-  background-color: rgb(52, 47, 85);
-}
-
-.menu-btn span::before,
-.menu-btn span::after {
+.burger-btn::before {
   content: '';
-  display: block;
+  position: absolute;
+  width: 20px;
+  background-color: rgb(0, 0, 0);
+  height: 2px;
+}
+
+.burger-btn span {
+  position: absolute;
+  margin: 10px 0;
+  width: 20px;
+  background-color: rgb(0, 0, 0);
+  height: 1.9px;
+}
+
+.burger-btn::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  background-color: rgb(0, 0, 0);
+  height: 2px;
+  margin-top: 20px;
 }

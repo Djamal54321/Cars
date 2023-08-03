@@ -3,7 +3,7 @@ import './price.scss';
 function Price({ value1, onClickPrice1, value2, onClickPrice2 }) {
   return (
     <div className="price">
-      <label for="text" className="name">
+      <label htmlFor="text" className="name">
         Цена:
       </label>
       <div className="price-form">
