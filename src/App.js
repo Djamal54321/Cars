@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
 //import Auth from './pages/auth/Auth';
 import AuthFormik from './pages/auth/Formik/AuthFormik';
-//import LoginFormik from './pages/auth/Formik/LoginFormik';
 
 import './index.css';
 

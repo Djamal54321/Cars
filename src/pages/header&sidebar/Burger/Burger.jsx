@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Menu from './Menu/Menu';
 
 import './burger.scss';
@@ -54,8 +55,8 @@ function Burger() {
       ),
     },
     {
-      value: '...еще что-нибудь..',
-      href: './example',
+      value: '...еще что-нибудь...',
+      href: '/example',
       icon: (
         <img
           src="https://i.ytimg.com/vi/zuf4iG3xD_8/hqdefault.jpg"
@@ -73,6 +74,7 @@ function Burger() {
           <span />
         </div>
       </nav>
+
       <Menu active={menuActive} setActive={setMenuActive} header={'Какое-то меню'} items={items} />
     </div>
   );

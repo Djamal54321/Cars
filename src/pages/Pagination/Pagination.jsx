@@ -3,27 +3,29 @@ import { ObjContext } from '../Home';
 
 import './pagination.scss';
 
-function Pagination({ elementPage, totalCars, paginate }) {
+function Pagination({ elementPage, totalCars, onClickCurrentPage, value }) {
   const pageNumbers = []; //номер старницы
   const {
     nextPage, //ПАГГИНАЦИЯ Следующая
-    lastPage, //ПАГГИНАЦИЯ Предыдущая
+    prevPage, //ПАГГИНАЦИЯ Предыдущая
   } = React.useContext(ObjContext);
 
   for (let i = 1; i <= Math.ceil(totalCars / elementPage); i++) {
-    //округляем до целого
-    pageNumbers.push(i); //пушим общее любое количество страниц
+    pageNumbers.push(i); //пушим общее количество страниц
   }
   return (
     <div>
       <ul className="pagination browser-default">
-        <button className="btn btn-primary" onClick={lastPage}>
+        <button className="btn btn-primary" onClick={prevPage}>
           Предыдущая
         </button>
         <div className="page-data">
           {pageNumbers.map((number) => (
             <li className="page-item" key={number}>
-              <a htef="#" className="page-link" onClick={() => paginate(number)}>
+              <a
+                htef="#"
+                className={value == number ? 'page-link active' : 'page-link'}
+                onClick={() => onClickCurrentPage(number)}>
                 {number}
               </a>
             </li>

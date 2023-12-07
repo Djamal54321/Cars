@@ -46,14 +46,14 @@ function Home() {
   }, [searchValue, categoryCarID, categoryID, stateCar, hozyaeva, marka]);
 
   //ПАГГИНАЦИЯ
-  const lastPageIndex = currentPage * elementPage; //последняя страница
-  const firstPAgeIndex = lastPageIndex - elementPage; //первая страница
+  const firstPAgeIndex = currentPage * elementPage - elementPage; //первая страница
+  const lastPageIndex = firstPAgeIndex + elementPage; //последняя страница
   const currentCar = items.slice(firstPAgeIndex, lastPageIndex); //текущая страница
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  //const nextPage = () =>setCurrentPage((prev) => (prev < lastPageIndex ? prev + 1 : lastPageIndex));
+  const prevPage = () => setCurrentPage((prev) => (prev > firstPAgeIndex ? prev - 1 : 1));
   const nextPage = () =>
     setCurrentPage((prev) => (prev < lastPageIndex ? prev + 1 : lastPageIndex));
-  const lastPage = () => setCurrentPage((prev) => (prev > firstPAgeIndex ? 1 : prev - 1));
-
   return (
     <div className="Home">
       <div className="pictures">
@@ -88,13 +88,19 @@ function Home() {
           priceFor,
           setPriceFor,
           nextPage, //ПАГГИНАЦИЯ Следующая
-          lastPage, //ПАГГИНАЦИЯ Предыдущая
+          prevPage, //ПАГГИНАЦИЯ Предыдущая
         }}>
         <Header />
         <Configuration />
         <CarsMain items={currentCar} loading={loading} />
 
-        <Pagination elementPage={elementPage} totalCars={items.length} paginate={paginate} />
+        <Pagination
+          value={currentPage}
+          elementPage={elementPage}
+          totalCars={items.length}
+          paginate={paginate}
+          onClickCurrentPage={(number) => setCurrentPage(number)}
+        />
       </ObjContext.Provider>
     </div>
   );

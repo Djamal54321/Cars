@@ -3,6 +3,9 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  li a {
+    padding: 0 16px;
+  }
 }
 .page-data {
   display: flex;
@@ -19,10 +22,19 @@
 }
 .page-link {
   font-family: cursive;
-  font-size: large;
+
   text-decoration: none; //убираем нижнее подчеркивание
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
+}
+.page-link.active,
+.page-link.active:hover,
+.page-link:hover {
+  color: rgb(255, 225, 0);
+  border: 1px solid rgb(30, 43, 221);
+  background-color: #0457d4;
+  transition: 0.7s;
 }
